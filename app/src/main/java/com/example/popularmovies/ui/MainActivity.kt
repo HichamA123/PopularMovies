@@ -35,11 +35,8 @@ class MainActivity : AppCompatActivity() {
     private fun initViews() {
         btnSubmit.setOnClickListener {
             val year = etYear.text.toString()
-
             if (year.toInt() >= 1990 && year.toInt() <= 2022) viewModel.getMovies(year)
             else Snackbar.make(rvMovies, "Please choose year from 1995 till 2019", Snackbar.LENGTH_LONG).show()
-
-
         }
         rvMovies.layoutManager = StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL)
         rvMovies.adapter = movieAdapter
